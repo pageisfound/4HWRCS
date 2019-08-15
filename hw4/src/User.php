@@ -65,7 +65,7 @@ class User
 
         if ($statement->rowCount() === 1) {
             $row = $statement->fetch();
-            if ($row && password_verify($password, $row['password'])) {
+            if (password_verify($password, $row['password'])) {
                 return true;
             }
         }

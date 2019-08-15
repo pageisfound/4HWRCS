@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+    header('location: /login.php');
+    exit;
+}
+
 $todo = new Todo();
 
 if ($_POST && isset($_POST['date']) && $_POST['date']) {
@@ -12,7 +19,6 @@ if ($_POST && isset($_POST['date']) && $_POST['date']) {
         }
     } catch (Throwable $exception) {
         echo '<div class="alert alert-danger">Filter execution failed! ' . $exception->getMessage() . '</div>';
-        $todos = $todo->readAll();
     }
 } else {
     $todos = $todo->readAll();

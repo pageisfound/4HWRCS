@@ -16,8 +16,8 @@ if (!$currentTodo) {
 }
 
 if ($_POST) {
-    $name        = htmlspecialchars(strip_tags(trim($_GET['name'] ?? '')));
-    $description = htmlspecialchars(strip_tags(trim($_GET['description'] ?? '')));
+    $name        = htmlspecialchars(strip_tags(trim($_POST['name'] ?? '')));
+    $description = htmlspecialchars(strip_tags(trim($_POST['description'] ?? '')));
 
     if (empty($name)) {
         echo '<div class="alert alert-danger">Name is required!</div>';

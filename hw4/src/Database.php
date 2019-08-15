@@ -13,7 +13,7 @@ class Database
     {
         $host = 'localhost:3306';
         $name = 'hw4';
-        $dsn  = sprintf('mysql:host=%s;dbname=%s', $host, $name);
+        $dsn  = 'mysql:host=' . $host . ';dbname=' . $name;
 
         $user = 'qwerty';
         $pass = 'qwerty';

@@ -1,5 +1,7 @@
 <?php
 
+$username = $password = $confirmPassword = null;
+
 if ($_POST) {
     $user = new User();
 
